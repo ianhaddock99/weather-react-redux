@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Hooks from './components/Hooks.js'
-import Classes from './components/Classes.js'
+import DailyForecast from './components/Classes.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
@@ -58,8 +57,8 @@ ReactDOM.render(
         <BaseLayout>
           <Switch>
             <Route exact path='/' component={App}/>
-            <Route path='/hooks' component={Hooks}/>
-            <Route path='/class' component={Classes}/>
+            
+            <Route path='/class' component={DailyForecast}/>
           </Switch>
         </BaseLayout>
       </Router>

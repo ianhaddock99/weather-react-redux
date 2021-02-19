@@ -5,10 +5,10 @@ const initialState = {
 //purpose of reducer is to return a new global state
 const reducerTemplate = (state = initialState, action) => {
     switch(action.type){
-        case "INCREMENT":
+        case "UPDATE":
             return{
                 ...state,
-                counter: state.counter + action.data
+                daily: action.payload
             }
         default:
             return state;
