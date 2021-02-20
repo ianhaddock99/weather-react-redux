@@ -38,7 +38,7 @@ const BaseLayout = (props) => {
       <div className="">
         <form className="d-flex justify-content-center mt-5" onSubmit={(e) => handleSubmit(e) }>
           <input style={{width: '400px'}} className="form-control mr-1" type="search" placeholder="Enter City Name" aria-label="Search" onChange ={(e) => setInputValue(e.target.value)} />
-          <button className="btn btn-outline-success" type="submit">Search</button>
+          <button className="btn" type="submit">Search</button>
         </form>
       </div>
       {props.children}
@@ -47,5 +47,6 @@ const BaseLayout = (props) => {
     </>
   )
 }
+
 
 export default BaseLayout

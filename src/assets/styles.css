@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+
+body{
+    background-color: #A3CEF1;
+    font-family: 'Merriweather', cursive;
+}
+
+.card{
+    background-color: #274C77;
+    color: white;
+}
+
+.navbar{
+    background-color: #6096BA;
+}
+
+.btn{
+    background-color: #ff9100;
+}
+
+

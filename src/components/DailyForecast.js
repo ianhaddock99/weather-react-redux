@@ -6,8 +6,8 @@ class DailyForecast extends Component {
     return (
       <>
           <h1 className="text-center mb-5 mt-5">8 Day Forecast</h1>
-          {/* <h2 className="text-center mb-5 mt-5">{day.uvi}</h2> */}
   
+          {/* <h2 className="text-center mb-5 mt-5">{inputValue}</h2> */}
 
         <div className="justify-content-lg-center" style={{display: 'flex', flexWrap: 'wrap'}}>
 
@@ -32,8 +32,8 @@ class DailyForecast extends Component {
                   <h5 className="card-title">{day.weather[0].description.split(' ').map(w => w[0].toUpperCase() + w.substr(1).toLowerCase()).join(' ') }</h5>
                   <img src={iconurl} />
                   <hr/>
-                  <h6 className="card-subtitle mb-2 text-muted">Humidity: {day.humidity}%</h6>
-                  <h6 className="card-subtitle mb-2 text-muted">UV Index: {day.uvi}</h6>
+                  <h6 className="card-subtitle mb-3">Humidity: {day.humidity}%</h6>
+                  <h6 className="card-subtitle mb-2">UV Index: {day.uvi}</h6>
                   {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
                   {/* <a href="#" className="card-link">Card link</a>
                   <a href="#" className="card-link">Another link</a> */}

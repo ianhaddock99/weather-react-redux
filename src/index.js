@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import DailyForecast from './components/Classes.js'
+import DailyForecast from './components/DailyForecast.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import reducer from './reducers/reducerTemplate'
 import BaseLayout from './components/layout/BaseLayout'
+import './assets/styles.css'
 import {
   BrowserRouter as Router,
   Route,
@@ -57,7 +58,6 @@ ReactDOM.render(
         <BaseLayout>
           <Switch>
             <Route exact path='/' component={App}/>
-            
             <Route path='/class' component={DailyForecast}/>
           </Switch>
         </BaseLayout>
