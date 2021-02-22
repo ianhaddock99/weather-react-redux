@@ -17,10 +17,10 @@ const BaseLayout = (props) => {
     let result = await fetch(`${baseUrl}forecast?q=${inputValue}&appid=${appId}`)
     let data =  await result.json();
     console.log(inputValue)
-
-
-    // try {
     
+    
+    
+    try {
       const {
         city: {
           coord: {
@@ -37,13 +37,13 @@ const BaseLayout = (props) => {
         let data =  await result.json();
         dispatch(update(data.daily)) 
       }
-    // } catch (error) {
-    //   return "Not a city"
-    // }
+    } catch (error) {
+      console.log("Not a city");
     }
-
-  return (
-    <>
+    }
+    
+    return (
+      <>
       <Header />
       <div className="">
         <form className="d-flex justify-content-center mt-5" onSubmit={(e) => handleSubmit(e) }>
@@ -51,6 +51,7 @@ const BaseLayout = (props) => {
           <button className="btn btn-outline-light mt-5" type="submit">Search</button>
         </form>
       </div>
+      <h2 className="text-center mb-5 mt-5">{inputValue}</h2>
       {props.children}
 
       <Footer />
