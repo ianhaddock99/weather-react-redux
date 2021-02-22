@@ -9,6 +9,7 @@ const reducerTemplate = (state = initialState, action) => {
             return{
                 ...state,
                 daily: action.payload
+
             }
         default:
             return state;

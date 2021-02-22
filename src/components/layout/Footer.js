@@ -3,13 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <>
-      <nav className="navbar">
-        <div className="container-fluid justify-content-center">
-          <span className="navbar-text">
-          Weather App 2021
-          </span>
-        </div>
-      </nav>
+      <div className="navbar fixed-bottom justify-content-center">ForeCast 2021</div>
     </>
   )
 }

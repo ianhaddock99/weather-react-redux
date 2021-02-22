@@ -3,19 +3,36 @@
 body{
     background-color: #A3CEF1;
     font-family: 'Merriweather', cursive;
+    padding-bottom: 70px;
 }
 
 .card{
-    background-color: #274C77;
-    color: white;
+    background-color: #6096BA;
+
 }
 
 .navbar{
-    background-color: #6096BA;
+    background-color: #274C77;
 }
 
 .btn{
     background-color: #ff9100;
 }
+
+.pic1{
+    height: 300px;
+}
+.pic2{
+    height: 300px;
+    width: 300px;
+}
+
+.jumbotron {
+    background-image: url("../assets/clouds2.jpg");
+    background-size: cover;
+    height: 500px;
+    margin-bottom: 0px !important;
+  }
+
 
 

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import DailyForecast from './components/DailyForecast.js'
+import About from './components/About.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
@@ -13,6 +14,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
+
 
 
 const saveToLocalStorage = (state) => {
@@ -59,6 +61,7 @@ ReactDOM.render(
           <Switch>
             <Route exact path='/' component={App}/>
             <Route path='/class' component={DailyForecast}/>
+            <Route path='/about' component={About}/>
           </Switch>
         </BaseLayout>
       </Router>
