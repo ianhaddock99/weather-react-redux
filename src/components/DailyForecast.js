@@ -18,11 +18,11 @@ class DailyForecast extends Component {
             // console.log(date);
             
             let iconcode = day.weather[0].icon;
-            let iconurl = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png";
+            let iconurl = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png"; //renders img from API
             
             return(
-              
-              <div className="card ml-4 mr-2 mb-4" style={{width: "18rem"}}>
+              //key prop below, random 9-character alphanumerical string, throw away key
+              <div className="card ml-4 mr-2 mb-4" key={ Math.random().toString(36).substr(2, 9) } style={{width: "18rem"}}> 
                 <div className="card-body text-center">
                   <h5 className="card-title">{date}</h5>
                   <hr/>
