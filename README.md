@@ -6,7 +6,7 @@
 
 This is app allows the user to search a city and return the 8 day forecast. The information on each card corresponds to one day. The informatio located on each card is the day, max temp, min temp, type of weather, picture of weather, humidity and UV index. 
 
-<img src="../src/assets/Search.png" width="700" height="500">
+<img src="./src/assets/Search.png" width="700" height="500">
 
 
 **How To Use App**
