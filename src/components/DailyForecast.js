@@ -7,12 +7,13 @@ class DailyForecast extends Component {
     return (
 
       <>
-          <Search />
+
+          
+          <Search /> 
           <h1 className="text-center mb-5 mt-5">8 Day Forecast</h1>
   
-          {/* <h2 className="text-center mb-5 mt-5">{this.props.inputValue}</h2> */}
 
-        <div className="justify-content-lg-center" style={{display: 'flex', flexWrap: 'wrap'}}>
+          <div className="justify-content-lg-center" style={{display: 'flex', flexWrap: 'wrap'}}>
 
           {this.props.daily.map((day) => {
             
@@ -21,7 +22,7 @@ class DailyForecast extends Component {
             // console.log(date);
             
             let iconcode = day.weather[0].icon;
-            let iconurl = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png"; //renders img from API
+            let iconurl = "https://openweathermap.org/img/wn/" + iconcode + "@2x.png"; //renders img from API
             
             return(
               //key prop below, random 9-character alphanumerical string, throw away key
