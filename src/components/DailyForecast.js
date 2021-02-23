@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import Search from './Search';
 
 class DailyForecast extends Component {
   render() {
     return (
+
       <>
+          <Search />
           <h1 className="text-center mb-5 mt-5">8 Day Forecast</h1>
   
           {/* <h2 className="text-center mb-5 mt-5">{this.props.inputValue}</h2> */}
@@ -12,7 +15,7 @@ class DailyForecast extends Component {
         <div className="justify-content-lg-center" style={{display: 'flex', flexWrap: 'wrap'}}>
 
           {this.props.daily.map((day) => {
-            console.log(day)
+            
             
             const date = new Date(day.dt * 1000).toDateString();
             // console.log(date);

@@ -1,10 +1,31 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import {
-    Link
+    Link,
+    useHistory
 } from 'react-router-dom'
+import { update } from '../../actions/templateActions';
 
 
-const Header = () => {
+const Header = (props) => {
+  const [state, setState] = React.useState({path: ''});
+  const history = useHistory();
+  const dispatch = useDispatch()
+
+
+  //listening for path name change takes copy of previos path and changes it
+  React.useEffect(() => {
+    history.listen((data) => {
+      setState({
+        ...state,
+        path: data.pathname
+      })
+    })
+    if (state.path !== '/class') {
+      dispatch(update([])) //if link clicked on is not class it will clear the existing cards
+    }
+
+  }, [state.path])
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
