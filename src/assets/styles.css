@@ -12,7 +12,8 @@ body{
 }
 
 .navbar{
-    background-color: #274C77;
+    background-color: #ff9100;
+    
 }
 
 .btn{
@@ -21,6 +22,8 @@ body{
 
 .pic1{
     height: 300px;
+    border-radius: 50%;
+    margin-top: 80px;
 }
 .pic2{
     height: 300px;
@@ -28,11 +31,11 @@ body{
 }
 
 .jumbotron {
-    background-image: url("../assets/clouds2.jpg");
+    background-image: url("../assets/mtn1.jpg");
     background-size: cover;
     height: 500px;
     margin-bottom: 0px !important;
-  }
+}
 
 
 

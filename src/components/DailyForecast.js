@@ -9,7 +9,8 @@ class DailyForecast extends Component {
       <>
 
           
-          <Search /> 
+          <Search />
+
           <h1 className="text-center mb-5 mt-5">8 Day Forecast</h1>
   
 

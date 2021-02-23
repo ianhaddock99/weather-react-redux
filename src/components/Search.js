@@ -35,6 +35,7 @@ const Search = () => {
         let data =  await result.json();
         dispatch(update(data.daily)) 
       }
+
     // } catch (error) {
     //   console.log("Not a city");
     // }

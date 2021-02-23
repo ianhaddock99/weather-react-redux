@@ -14,6 +14,8 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
+import ErrorBoundary from './components/ErrorBoundry'
+// import Search from './components/Search'
 
 
 
@@ -57,6 +59,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
+        <ErrorBoundary>
         <BaseLayout>
           <Switch>
             <Route exact path='/' component={App}/>
@@ -64,6 +67,7 @@ ReactDOM.render(
             <Route path='/about' component={About}/>
           </Switch>
         </BaseLayout>
+        </ErrorBoundary>
       </Router>
     </Provider>
   </React.StrictMode>,

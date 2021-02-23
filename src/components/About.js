@@ -12,7 +12,7 @@ const About = () => {
 
 
     <div className="text-center justify-content-center">
-    <img className="mb-4 pic1 rounded mt-5" src={Me}></img>
+    <img className="mb-4 pic1" src={Me}></img>
         <p className="blockquote">My name is Ian Haddock. I am a former Marine Corps veteran who is currently looking to transition into the field of software development. I feel that software development challenges me to use the most of my problem solving abilities and I enjoy working in teams to solve coding issues and create projects. Feel free to check out the applications I have made and contact me!</p>
         <p className="lead">Email: ianhaddock99@gmail.com</p>
     </div>
