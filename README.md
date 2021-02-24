@@ -35,27 +35,54 @@ My base goal was to give the user the ability to search a city and return the we
 
 Grab full details from open movie database:
 ```
-    promises = moviesArr.map(async (movie, index) => {
-        let imdb_id = movie.imdb_id;
-        console.log(imdb_id);
-        let response = await fetch(
-            `http://private.omdbapi.com/?i=${imdb_id}&apikey=9a14bb73`
-        );
-        let result = await response.json();
-        moviesArr[index] = {
-            ...moviesArr[index],
-            ...result,
-        };
-    });
+const Search = () => {
+  const [inputValue, setInputValue] = React.useState(''); // state , setState
+  const dispatch = useDispatch()
+  
+  const handleSubmit = async(e) => {
+    e.preventDefault()
+    try {
+    let result = await fetch(`${baseUrl}forecast?q=${inputValue}&appid=${appId}`)
+    let data =  await result.json();
+    console.log(inputValue)
+    
+    
+    if(data?.city?.coord){
+      const {
+        city: {
+          coord: {
+            lat, lon
+          }
+        }
+      } = data //object desctructering based off what was in original api pulling out the lat and lon of typed in city
+      
+      if (lat  && lon) {
+        let result = await fetch(`${baseUrl}onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=current,minutely,hourly,alerts&appid=${appId}`)
+        let data =  await result.json();
+        dispatch(update(data.daily)) 
+      }
+    }
+  } catch (error) {
+    console.log("Not a city");
+  }
+  }
+    
+    return (
+      <>
+      
+      <div className="">
+        <form className="d-flex justify-content-center mt-5" onSubmit={(e) => handleSubmit(e) }>
+          <input style={{width: '400px'}} className="form-control mr-1 mt-5" type="search" placeholder="Enter City Name" aria-label="Search" onChange ={(e) => setInputValue(e.target.value)} />
+          <button className="btn btn-outline-light mt-5" type="submit">Search</button>
+        </form>
+      </div>
+      <h2 className="text-center mb-5 mt-5">{inputValue}</h2>
 
-    await Promise.all(promises);
-    console.log(moviesArr);
 
-    let filteredResults = moviesArr.filter((movie, index) => {
-        return movie.Title;
-    });
-
-    populateSearchResultCards(filteredResults);
+    </>
+  )
+  
+}
 ```
 
 **Developer Team**
