@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+
 import Search from './Search';
 
 class DailyForecast extends Component {
@@ -8,8 +9,10 @@ class DailyForecast extends Component {
 
       <>
 
-          
+         
           <Search />
+         
+
 
           <h1 className="text-center mb-5 mt-5">8 Day Forecast</h1>
   

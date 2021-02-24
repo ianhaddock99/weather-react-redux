@@ -39,3 +39,82 @@ body{
 
 
 
+blockquote {
+    border-radius: 25px;
+    font-size: 1.1em;
+    line-height: 1.6em;
+    padding: 20px 20px 20px 40px;
+    border-left: none;
+    position: relative;
+    text-indent: -19px
+}
+
+section#block_content {
+    min-height: 400px;
+    padding-top: 40px;
+    text-align: left
+}
+
+blockquote p {
+    font-size: 1em
+}
+
+blockquote:before,
+blockquote:after {
+    font-family: Arial, serif;
+    font-size: 2.5em;
+    vertical-align: middle;
+    line-height: 0
+}
+
+blockquote:before {
+    content: open-quote;
+    margin-right: 4px
+}
+
+blockquote:after {
+    content: close-quote;
+    margin-left: 3px
+}
+
+blockquote.blockstyle,
+blockquote.style2 {
+    background: #fff;
+    font-style: italic
+}
+
+blockquote.blockstyle p,
+blockquote.style2 p {
+    display: inline
+}
+
+blockquote.blockstyle {
+    border-left: 3px solid #ff9100;
+    position: relative
+}
+
+
+
+blockquote.blockstyle:before,
+blockquote.blockstyle:after {
+    color: #ff9100
+}
+
+blockquote.blockstyle.border-color-blue {
+    border-color: #01b7f2
+}
+
+blockquote.blockstyle.border-color-blue>span.triangle:before {
+    color: #01b7f2
+}
+
+blockquote.blockstyle.border-color-yellow {
+    border-color: #fdb714
+}
+
+blockquote.blockstyle.border-color-yellow>span.triangle:before {
+    color: #fdb714
+}
+
+
+

@@ -12,34 +12,31 @@ const Search = () => {
   
   const handleSubmit = async(e) => {
     e.preventDefault()
+    try {
     let result = await fetch(`${baseUrl}forecast?q=${inputValue}&appid=${appId}`)
     let data =  await result.json();
     console.log(inputValue)
     
     
-    
-    // try {
+    if(data?.city?.coord){
       const {
         city: {
           coord: {
             lat, lon
           }
         }
-      } = data //object desctructering based off what was in original api
+      } = data //object desctructering based off what was in original api pulling out the lat and lon of typed in city
       
-      
-      
-      
-      if (lat && lon) {
+      if (lat  && lon) {
         let result = await fetch(`${baseUrl}onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=current,minutely,hourly,alerts&appid=${appId}`)
         let data =  await result.json();
         dispatch(update(data.daily)) 
       }
-
-    // } catch (error) {
-    //   console.log("Not a city");
-    // }
     }
+  } catch (error) {
+    console.log("Not a city");
+  }
+  }
     
     return (
       <>

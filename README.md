@@ -1,7 +1,7 @@
 ## ForeCast 
 
 
-## Netlify <>
+## Netlify <https://angry-golick-71d890.netlify.app>
 
 
 This is app allows the user to search a city and return the 8 day forecast. The information on each card corresponds to one day. The informatio located on each card is the day, max temp, min temp, type of weather, picture of weather, humidity and UV index. 
@@ -19,15 +19,15 @@ To use this app simply navigate over to the search page via the navbar up at the
 - React.js, Redux.js, Bootstrap, CSS
 - API : Open Weather API
 
-**MVP**
+**MVP & Screen Shots**
 
-My base goal was to give the user the ability to search a city and return the results in a clean and clear format.
+My base goal was to give the user the ability to search a city and return the weather results in a clean and clear format.
 
-<img src="./public/images/image1.png" width="700" height="500">
+<img src="./src/assets/Home.png" width="700" height="500">
 
-<img src="./public/images/cards1.png" width="700" height="500">
+<img src="./src/assets/Search.png" width="700" height="500">
 
-<img src="./public/images/table.png" width="700" height="500">
+<img src="./src/assets/About.png" width="700" height="500">
 
 
 
@@ -57,12 +57,6 @@ Grab full details from open movie database:
 
     populateSearchResultCards(filteredResults);
 ```
-
-
-**Screen Shots and GIFS**
-
-
-
 
 **Developer Team**
 
