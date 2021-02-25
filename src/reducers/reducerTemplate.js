@@ -1,5 +1,6 @@
 const initialState = {
-    counter: 0
+    counter: 0,
+    daily: []
 }
 
 //purpose of reducer is to return a new global state

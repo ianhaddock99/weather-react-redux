@@ -14,52 +14,48 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
-import ErrorBoundary from './components/ErrorBoundry'
-// import Search from './components/Search'
 
 
-
-const saveToLocalStorage = (state) => {
-  try{
-    const serializeState = JSON.stringify(state);
-    localStorage.setItem('state', serializeState);
-  }
-  catch(e){
-    console.log(e);
-  }
+// const saveToLocalStorage = (state) => {
+//   try{
+//     const serializeState = JSON.stringify(state);
+//     localStorage.setItem('state', serializeState);
+//   }
+//   catch(e){
+//     console.log(e);
+//   }
   
-}
+// }
 
-const loadFromLocalStorage = (params) => {
-  //serialization = converting js object to a string
-  const serializeState = localStorage.getItem('state');
-  if(serializeState === null){
-    return undefined;
-  }
-  else{
-    return JSON.parse(serializeState); //returns JS obejct representing local storage
-  }
+// const loadFromLocalStorage = (params) => {
+//   //serialization = converting js object to a string
+//   const serializeState = localStorage.getItem('state');
+//   if(serializeState === null){
+//     return undefined;
+//   }
+//   else{
+//     return JSON.parse(serializeState); //returns JS obejct representing local storage
+//   }
   
-}
+// }
 
-const persistedState = loadFromLocalStorage();
+// const persistedState = loadFromLocalStorage(); //Place presistedState variable after reducer on line 51.
 
 
 
 
 //initializing redux store
-let store = createStore(reducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
-store.subscribe(()=>{
-  saveToLocalStorage(store.getState());
-})
+// store.subscribe(()=>{
+//   saveToLocalStorage(store.getState());
+// })
 
 //provider hooks react to redux
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <ErrorBoundary>
         <BaseLayout>
           <Switch>
             <Route exact path='/' component={App}/>
@@ -67,7 +63,6 @@ ReactDOM.render(
             <Route path='/about' component={About}/>
           </Switch>
         </BaseLayout>
-        </ErrorBoundary>
       </Router>
     </Provider>
   </React.StrictMode>,

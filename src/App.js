@@ -1,5 +1,5 @@
 import React from 'react'
-import Cloud from '../src/assets/clouds.jpg'
+
 
 const App = () => {
   

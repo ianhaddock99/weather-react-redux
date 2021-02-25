@@ -33,10 +33,11 @@ My base goal was to give the user the ability to search a city and return the we
 
 **Code Snippets**
 
-Grab full details from open movie database:
+
 ```
+
 const Search = () => {
-  const [inputValue, setInputValue] = React.useState(''); // state , setState
+  const [inputValue, setInputValue] = React.useState(''); // initial state of input value is blank, when setinput value is called passes in whatever user searched for
   const dispatch = useDispatch()
   
   const handleSubmit = async(e) => {
@@ -45,7 +46,8 @@ const Search = () => {
     let result = await fetch(`${baseUrl}forecast?q=${inputValue}&appid=${appId}`)
     let data =  await result.json();
     console.log(inputValue)
-    
+
+
     
     if(data?.city?.coord){
       const {
@@ -59,11 +61,12 @@ const Search = () => {
       if (lat  && lon) {
         let result = await fetch(`${baseUrl}onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=current,minutely,hourly,alerts&appid=${appId}`)
         let data =  await result.json();
-        dispatch(update(data.daily)) 
+        dispatch(update(data.daily));
+        // dispatch -> update (payload) -> {type: '', payload: {}} action, reducer
       }
     }
   } catch (error) {
-    console.log("Not a city");
+    console.log("Not a valid city");
   }
   }
     
@@ -83,6 +86,8 @@ const Search = () => {
   )
   
 }
+
+
 ```
 
 **Developer Team**

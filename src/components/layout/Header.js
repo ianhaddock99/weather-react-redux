@@ -30,6 +30,8 @@ const Header = (props) => {
     }
 
   }, [state.path])
+
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
@@ -48,9 +50,6 @@ const Header = (props) => {
       <li className="nav-item active">
         <Link className="nav-link" to="/about">About</Link>
       </li>
-      {/* <li className="nav-item">
-        <Link className="nav-link disabled" to="#">Disabled</Link>
-      </li> */}
     </ul>
   </div>
 </nav>

@@ -1,13 +1,30 @@
 import React from 'react'
 import { update } from '../actions/templateActions'
-import {useDispatch} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 const baseUrl = `https://api.openweathermap.org/data/2.5/`
 const appId = process.env.REACT_APP_WEATHER_API_KEY;
 
+// class SearchClass extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {}
+//   }
+
+//   componentDidMount() {
+//     this.setState({
+//       name: 'Alexander'
+//     })
+//   }
+
+//   render() {
+//     return <div>Hello my name is {this.state.name}</div>
+//   }
+// }
+
 
 const Search = () => {
-  const [inputValue, setInputValue] = React.useState(''); // state , setState
+  const [inputValue, setInputValue] = React.useState(''); // initial state of input value is blank, when setinput value is called passes in whatever user searched for
   const dispatch = useDispatch()
   
   const handleSubmit = async(e) => {
@@ -16,7 +33,8 @@ const Search = () => {
     let result = await fetch(`${baseUrl}forecast?q=${inputValue}&appid=${appId}`)
     let data =  await result.json();
     console.log(inputValue)
-    
+
+
     
     if(data?.city?.coord){
       const {
@@ -30,11 +48,12 @@ const Search = () => {
       if (lat  && lon) {
         let result = await fetch(`${baseUrl}onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=current,minutely,hourly,alerts&appid=${appId}`)
         let data =  await result.json();
-        dispatch(update(data.daily)) 
+        dispatch(update(data.daily));
+        // dispatch -> update (payload) -> {type: '', payload: {}} action, reducer
       }
     }
   } catch (error) {
-    console.log("Not a city");
+    console.log("Not a valid city");
   }
   }
     

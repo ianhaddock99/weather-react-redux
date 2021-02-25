@@ -5,6 +5,10 @@ body{
     font-family: 'Merriweather', cursive;
     padding-bottom: 70px;
 }
+/* USED TO CAPITALIZE FIRST LETTER IN EVERY WORD */
+#weather-description {
+    text-transform: capitalize;
+}
 
 .card{
     background-color: #6096BA;
