@@ -1,22 +1,14 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-
-
 import Search from './Search';
 
 class DailyForecast extends Component {
   render() {
-    console.log(this.props) // daily: [], update: fn()
-
-    
+  
     return (
-
       <>
 
-         
           <Search />
-         
-
 
           <h1 className="text-center mb-5 mt-5">8 Day Forecast</h1>
   
@@ -25,9 +17,7 @@ class DailyForecast extends Component {
 
           {this.props.daily.map((day, index) => {
             
-            
             const date = new Date(day.dt * 1000).toDateString();
-            // console.log(date);
             
             let iconcode = day.weather[0].icon;
             let iconurl = "https://openweathermap.org/img/wn/" + iconcode + "@2x.png"; //renders img from API
