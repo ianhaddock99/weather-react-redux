@@ -13,7 +13,7 @@ const Header = (props) => {
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed); //controls dropdown for responsive pages
   
   const [state, setState] = React.useState({path: ''});
-  const history = useHistory();
+  const history = useHistory(); //The useHistory hook gives you access to the history instance that you may use to navigate
   const dispatch = useDispatch()
 
 
